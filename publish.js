@@ -38,7 +38,8 @@ define([
 
   var publish_notebook = function() {
     var body = $("<div>");
-    var name_elem = $("<input>").attr("id", "publish-notebook-name").attr("value", utils.url_path_join(Jupyter.notebook.notebook_path))
+    var name_elem = $("<input>").attr("id", "publish-notebook-name").attr("value", Jupyter.notebook.notebook_name)
+    console.log(Jupyter.notebook.notebook_name)
     var status = $("<span>").attr("id", "publish-status").css("margin-left", "10px")
     $("<p>").css("margin", "10px 0 0 0").text("Name of the shared notebook: ").append(name_elem).append(status).appendTo(body)
     var overwrite_elem = $("<input>").attr("type", "checkbox").attr("id", "publish-overwrite")

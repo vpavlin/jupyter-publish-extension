@@ -26,8 +26,9 @@ def run():
         if key.startswith("/user") and not key.endswith("public"):
           public_route = data.get(os.path.join(key, "public"))
           if public_route:
-            if public_route['target'] != val['target']:
-              print(public_route['target']+"!="+val['target'])
+            public_hostname = urlparse(public_route['target'])
+            current_hostname = urlparse(val['target'])
+            if public_hostname.hostname != current_hostname.hostname:
               users.append((key, "update"))
           else:
             users.append((key, "add"))

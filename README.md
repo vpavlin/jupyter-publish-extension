@@ -80,12 +80,12 @@ c.KubeSpawner.singleuser_extra_containers = [
                     "value": "true"
                 }
             ],
-        "volumeMounts": [
-            {
-                "mountPath": "/opt/app-root/src",
-                "name": "data"
-            }
-        ]
+            "volumeMounts": [
+                {
+                    "mountPath": "/opt/app-root/src",
+                    "name": "data"
+                }
+            ]
         }
     ]
 ```
@@ -94,6 +94,7 @@ The `nbviewer` image is based on https://github.com/vpavlin/nbviewer-quickstart 
 
 ```
 oc apply -f https://raw.githubusercontent.com/vpavlin/nbviewer-quickstart/master/images.json
+```
 
 ## Install the extension
 
